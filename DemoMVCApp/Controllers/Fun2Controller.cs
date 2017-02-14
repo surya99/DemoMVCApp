@@ -11,7 +11,9 @@ namespace DemoMVCApp.Controllers
         // GET: Fun2
         public ActionResult Index()
         {
+
             return View();
+
         }
     }
 }
