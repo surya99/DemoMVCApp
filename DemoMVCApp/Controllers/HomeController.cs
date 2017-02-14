@@ -26,5 +26,9 @@ namespace DemoMVCApp.Controllers
 
             return View();
         }
+        public ActionResult Serial()
+        {
+            return Content("GOt");
+        }
     }
 }
