@@ -243,3 +243,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/DemoMVCApp/Content/themes/base
+/DemoMVCApp/Views/Fun2/WorkflowDemo.cshtml
+/DemoMVCApp/Views/Fun2/WorkflowDemoOne.cshtml

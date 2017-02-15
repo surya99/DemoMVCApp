@@ -14,10 +14,15 @@ namespace DemoMVCApp.Models
     
     public partial class t_UserReg
     {
+
         public int iId { get; set; }
         public string sUserId { get; set; }
         public string sPassword { get; set; }
         public string sEmail { get; set; }
         public string iPhoneNumber { get; set; }
+    }
+    public class Login
+    {
+        public int iId { get; set; }
     }
 }
