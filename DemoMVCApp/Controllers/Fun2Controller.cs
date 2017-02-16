@@ -9,14 +9,19 @@ namespace DemoMVCApp.Controllers
 {
     public class Fun2Controller : Controller
     {
-        t_UserReg objUserReg = new t_UserReg();
-        // GET: Fun2
+
+       Login objUserReg = new Login();
+
+        #region LoginPage
+        // GET: Login
+        [HttpGet]
         public ActionResult Index()
         {
             return View(objUserReg);
         }
         //POST:Login
-        public ActionResult Login(t_UserReg objModel)
+        [HttpPost]
+        public ActionResult Index(Login objModel)
         {
             if (ModelState.IsValid)
             {
@@ -25,6 +30,18 @@ namespace DemoMVCApp.Controllers
             else
                 return View(objModel);
         }
+        #endregion
+
+        #region NewUserRegistration
+
+        public ActionResult UserRegistration()
+        {
+            return View();
+        }
+
+        #endregion
+
+        #region WorkFlowDemo
         public ActionResult WorkflowDemo()
         {
             return View();
@@ -33,5 +50,6 @@ namespace DemoMVCApp.Controllers
         {
             return View();
         }
+        #endregion
     }
 }

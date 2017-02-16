@@ -1,5 +1,5 @@
 ﻿@using DemoMVCApp.Models
-@model DemoMVCApp.Models.t_UserReg
+@model DemoMVCApp.Models.Login
 @{
     Layout = null;
 }
@@ -11,7 +11,7 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    @using (Html.BeginForm("Login", "Fun2", FormMethod.Post))
+    @using (Html.BeginForm("Index", "Fun2", FormMethod.Post))
     { 
     <div class="container">
         <div class="row">
@@ -21,18 +21,20 @@
         </div>
         <div class="row">
             <div class="col-xs-3">
-                <label class="">UserName</label>
+              @Html.LabelFor(m=>m.sUserId)
             </div>
             <div class="col-xs-3">
                 @Html.TextBoxFor(m=>m.sUserId,new { @class="form-control"})
+                @Html.ValidationMessageFor(m=>m.sUserId,"", new { style = "color:red" })
             </div>
         </div>
         <div class="row">
             <div class="col-xs-3">
-                <label class="">Enter Password</label>
+                @Html.LabelFor(m=>m.sPassword)
             </div>
             <div class="col-xs-3">
                 @Html.PasswordFor(m => m.sPassword, new { @class="form-control"})
+                @Html.ValidationMessageFor(m=>m.sPassword,"", new {style="color:red" })
             </div>
         </div>
         <dliv class="row">

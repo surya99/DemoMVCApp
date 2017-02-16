@@ -11,10 +11,13 @@ namespace DemoMVCApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
+    [Bind(Exclude = "iId")]
     public partial class t_UserReg
     {
-
+        [ScaffoldColumn(false)]
         public int iId { get; set; }
         public string sUserId { get; set; }
         public string sPassword { get; set; }
@@ -23,6 +26,17 @@ namespace DemoMVCApp.Models
     }
     public class Login
     {
-        public int iId { get; set; }
+        [Required(ErrorMessage ="Please Enter User Name")]
+        [StringLength(1024,ErrorMessage ="Name Max Limit Exceed!!!")]
+        [Display(Name ="UserName")]
+        public string sUserId { get; set; }
+
+        [Required(ErrorMessage ="Please Enter Password")]
+        [Display(Name ="Password")]
+        [StringLength(12,ErrorMessage ="Pasword Minimum 6 character and maximum 12",MinimumLength =6)]
+       
+        public string sPassword { get; set; }
+
+       
     }
 }

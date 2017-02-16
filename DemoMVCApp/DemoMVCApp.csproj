@@ -352,6 +352,7 @@
     <Content Include="Views\Fun2\Index.cshtml" />
     <Content Include="Views\Fun2\WorkflowDemo.cshtml" />
     <Content Include="Views\Fun2\WorkflowDemoOne.cshtml" />
+    <Content Include="Views\Fun2\UserRegistration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
