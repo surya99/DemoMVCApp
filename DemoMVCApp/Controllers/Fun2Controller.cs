@@ -10,14 +10,15 @@ namespace DemoMVCApp.Controllers
     public class Fun2Controller : Controller
     {
 
-       Login objUserReg = new Login();
+       Login objUserLogin = new Login();
+        
 
         #region LoginPage
         // GET: Login
         [HttpGet]
         public ActionResult Index()
         {
-            return View(objUserReg);
+            return View(objUserLogin);
         }
         //POST:Login
         [HttpPost]
@@ -33,12 +34,23 @@ namespace DemoMVCApp.Controllers
         #endregion
 
         #region NewUserRegistration
-
+        [HttpGet]
         public ActionResult UserRegistration()
         {
             return View();
         }
-
+        [HttpPost]
+        public ActionResult UserRegistration(t_UserReg objUser)
+        {
+            if (ModelState.IsValid)
+            {
+                return Json("Registration Success",JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return View();
+            }
+        }
         #endregion
 
         #region WorkFlowDemo

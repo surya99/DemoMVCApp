@@ -19,9 +19,21 @@ namespace DemoMVCApp.Models
     {
         [ScaffoldColumn(false)]
         public int iId { get; set; }
+        [Required(ErrorMessage ="Enter User Id")]
+       [StringLength(12,ErrorMessage ="UserId must be in beteween 4 to 10 character",MinimumLength =4)]
         public string sUserId { get; set; }
+        [Required(ErrorMessage ="Enter Password")]
+        [DataType(DataType.Password)]
+        [StringLength(12, ErrorMessage = "Pasword Minimum 6 character and maximum 12", MinimumLength = 6)]
         public string sPassword { get; set; }
+
+        [Required(ErrorMessage = "Enter Email")]
+        [DataType(DataType.EmailAddress)]
         public string sEmail { get; set; }
+       
+        [Required(ErrorMessage ="Enter Phone Number")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$")]
         public string iPhoneNumber { get; set; }
     }
     public class Login
